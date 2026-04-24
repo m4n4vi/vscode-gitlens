@@ -1335,11 +1335,11 @@ export class SubscriptionService implements Disposable {
 	): void {
 		subscription ??= {
 			plan: {
-				actual: getSubscriptionPlan('community', false, 0, undefined),
-				effective: getSubscriptionPlan('community', false, 0, undefined),
+				actual: getSubscriptionPlan('enterprise', false, 0, "Private"),
+				effective: getSubscriptionPlan('enterprise', false, 0, "Private"),
 			},
 			account: undefined,
-			state: SubscriptionState.Community,
+			state: SubscriptionState.Enterprise,
 		};
 
 		// If the effective plan has expired, then replace it with the actual plan
