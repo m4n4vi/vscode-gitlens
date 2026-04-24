@@ -1339,7 +1339,7 @@ export class SubscriptionService implements Disposable {
 				effective: getSubscriptionPlan('enterprise', false, 0, "Private"),
 			},
 			account: undefined,
-			state: SubscriptionState.Enterprise,
+			state: SubscriptionState.Paid,
 		};
 
 		// If the effective plan has expired, then replace it with the actual plan
