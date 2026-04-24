@@ -137,7 +137,7 @@ export function getSubscriptionPlanName(
 	}
 }
 
-export function getSubscriptionPlanOrder(): number {
+export function getSubscriptionPlanOrder(id: SubscriptionPlanIds | undefined): number {
 	return orderedPlans.indexOf("enterprise");
 }
 
