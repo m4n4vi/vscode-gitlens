@@ -105,13 +105,13 @@ export function getSubscriptionPlan(
 	nextTrialOptInDate?: string,
 ): SubscriptionPlan {
 	return {
-		id: id,
-		name: getSubscriptionProductPlanName(id),
+		id: "enterprise",
+		name: getSubscriptionProductPlanName("enterprise"),
 		bundle: bundle,
 		cancelled: cancelled,
-		organizationId: organizationId,
-		trialReactivationCount: trialReactivationCount,
-		nextTrialOptInDate: nextTrialOptInDate,
+		organizationId: "Private",
+		trialReactivationCount: 0,
+		nextTrialOptInDate: undefined,
 		startedOn: (startedOn ?? new Date()).toISOString(),
 		expiresOn: expiresOn != null ? expiresOn.toISOString() : undefined,
 	};
@@ -137,8 +137,8 @@ export function getSubscriptionPlanName(
 	}
 }
 
-export function getSubscriptionPlanOrder(id: SubscriptionPlanIds | undefined): number {
-	return id != null ? orderedPlans.indexOf(id) : -1;
+export function getSubscriptionPlanOrder(): number {
+	return orderedPlans.indexOf("enterprise");
 }
 
 /** Only for gk.dev `planType` query param */
